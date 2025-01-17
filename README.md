@@ -64,3 +64,7 @@ To set up the project:
     *   Raspbian OS on Raspberry Pi
     *   RPi.GPIO (for Raspberry Pi GPIO control)
     *   SoundDevice or similar (for audio input)
+
+## 🎥 Demonstration Video
+
+A demonstration video showcasing the working model on the Raspberry Pi (where the LED lights up in response to the voice command).
