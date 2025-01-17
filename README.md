@@ -1,40 +1,66 @@
-# Stop-Word-Detection-TinyML-RaspberryPi
-TinyML-Based Voice Command Recognition System for Real-Time Activation of LED Indicator on Raspberry Pi
+# 🗣️ TinyML-Based Voice Command Recognition for Real-Time LED Activation on Raspberry Pi
+
+This project provides a hands-on introduction to TinyML, demonstrating how to build a real-time voice command recognition system that controls an LED on a Raspberry Pi. We use a Convolutional Neural Network (CNN) to identify the "stop" keyword and trigger LED activation, illustrating essential TinyML deployment steps, including model training, optimization, and real-time implementation.
+
+## 📜 Project Overview
+
+This project demonstrates the implementation of a TinyML voice command recognition system that:
+
+*   Recognizes the keyword "**stop**".
+*   Activates an LED on a Raspberry Pi upon detection of the "stop" command.
+*   Leverages a CNN model trained on MFCC features from audio signals.
+*   Employs TensorFlow Lite for model optimization and Raspberry Pi deployment.
+
+## 🌟 Key Features
+
+*   **MFCC Feature Extraction**: Extracts relevant features from audio recordings using Mel-Frequency Cepstral Coefficients.
+*   **CNN Model**: Classifies audio data as "stop" or "not stop" using a Convolutional Neural Network.
+*   **TensorFlow Lite Optimization**: Converts the model for efficient deployment on edge devices like Raspberry Pi.
+*   **Real-Time Deployment**: Implements the model on a Raspberry Pi for real-time keyword detection and LED control.
+
+## 📁 Project Files
+
+The repository includes the following files:
+
+*   **`mfcc_extraction.py`**: Extracts MFCC features from audio samples.
+*   **`mfcc_classifier.py`**: Trains a CNN model using MFCC features to classify audio as "stop" or "not stop".
+*   **`model_optimization_tflite.py`**: Converts the trained model to TensorFlow Lite format.
+*   **`raspberry_pi_inference.py`**: Loads the TensorFlow Lite model and controls the LED on a Raspberry Pi using GPIO.
+
+## ⚙️ Project Pipeline
+
+1.  **Feature Extraction with MFCC:**
+    *   The `mfcc_extraction.py` script extracts MFCC features from audio samples.
+
+2.  **CNN Classifier for Keyword Detection:**
+    *   The `mfcc_classifier.py` script trains a CNN model to classify audio data using the extracted MFCC features.
+
+3.  **Model Optimization:**
+    *   The `model_optimization_tflite.py` script converts the trained model to a TensorFlow Lite format.
+
+4.  **Deployment on Raspberry Pi:**
+    *   The `raspberry_pi_inference.py` script deploys the TensorFlow Lite model on a Raspberry Pi, controlling an LED based on the keyword detection.
+
+## 🚀 Installation
+
+To set up the project:
+
+1.  **Clone the Repository:**
+
+    ```bash
+    git clone https://github.com/KHAOULA-LAGHDAF/Stop-Word-Detection-TinyML-RaspberryPi.git
+    cd TinyML-Voice-Command-LED
+    ```
 
 
-This project is a voice recognition system that detects the word "stop" and activates a red LED lamp. It utilizes TinyML with TensorFlow Lite and runs on a Raspberry Pi, allowing for efficient real-time recognition and response on a small device. The system uses a pre-trained model, converted and optimized with TensorFlow Lite, for wake-word detection based on the "stop" command.
+## ⚙️ Requirements
 
+*   **Hardware:**
+    *   Raspberry Pi (any model with GPIO support)
 
-Project Overview
-Goal: Develop a real-time voice recognition model that activates an LED when the word "stop" is detected.
-Hardware: Raspberry Pi with an LED lamp connected.
-Software Frameworks: TensorFlow, TensorFlow Lite, and TinyML principles.
-Data: Google Speech Commands Dataset.
-Feature Extraction: Mel Frequency Cepstral Coefficients (MFCC).
-Model Architecture: Convolutional Neural Network (CNN).
-
-
-System Workflow
-1. Data Preparation: The Google Speech Commands Dataset was used for training. This dataset contains various short audio clips, including the target word "stop."
-
-2. Feature Extraction: We extracted features using the MFCC (Mel Frequency Cepstral Coefficients) technique, which is a popular approach in audio signal processing. MFCC helps to capture essential features from the audio signals that contribute to distinguishing different words.
-
-3. Model Training: A CNN (Convolutional Neural Network) was used to train the model for wake-word detection. The CNN architecture allows the model to learn and recognize the characteristics of the "stop" word, filtering out other sounds and background noise.
-
-4. Model Conversion: After training, the model was converted to TensorFlow Lite format using TensorFlow Lite, which optimizes it for deployment on edge devices like the Raspberry Pi. This process involves reducing the model's size and complexity while retaining accuracy.
-
-5. Deployment on Raspberry Pi: The optimized model was deployed on a Raspberry Pi, where it continuously listens for the "stop" command. When the system recognizes the word, it triggers a GPIO signal that turns on a red LED lamp.
-
-
-TinyML opens up numerous possibilities in fields where low latency and low power consumption are essential, such as wearable devices, IoT applications, and smart home automation. Through this project, I gained hands-on experience with the TinyML workflow, including data preprocessing, feature extraction with MFCC, model training, TensorFlow Lite conversion, and deployment on embedded hardware. These skills are invaluable for developing AI-driven solutions on resource-constrained devices and have expanded my understanding of practical machine learning deployment.
-
-By completing this project, I not only learned to build a fully functional TinyML application but also deepened my knowledge in voice recognition and embedded systems. This experience has been a significant step in my journey to specialize in edge computing and AI, equipping me with practical insights for future TinyML and IoT projects.
-
-
-
-
-
-
-
-
-
+*   **Software:**
+    *   Python 3.7+
+    *   TensorFlow (for training and converting to TensorFlow Lite)
+    *   Raspbian OS on Raspberry Pi
+    *   RPi.GPIO (for Raspberry Pi GPIO control)
+    *   SoundDevice or similar (for audio input)
